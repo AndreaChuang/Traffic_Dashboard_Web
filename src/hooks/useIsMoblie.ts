@@ -5,8 +5,8 @@ import { viewBtn, ViewBtn } from "@/jotai.ts";
 type DeviceType = "mobile" | "tablet" | "desktop";
 
   const getDeviceType = (width: number): DeviceType => {
-  if (width < 768) return "mobile";
-  if (width < 1024) return "tablet";
+  if (width < 1150) return "mobile";
+  if (width < 1200) return "tablet";
   return "desktop";
 };
 

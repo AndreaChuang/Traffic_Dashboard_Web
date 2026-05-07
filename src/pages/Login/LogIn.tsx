@@ -32,9 +32,9 @@ const BackgroundContainer = styled.div`
   min-height: 100vh;
   position: relative;
   display: flex;
-  align-items: center;
   justify-content: center;
-  padding: 20px;
+  align-items: flex-start;
+  padding: 50px 20px 20px;
 
   &::before {
     content: "";
@@ -44,10 +44,15 @@ const BackgroundContainer = styled.div`
     pointer-events: none;
   }
 
-  // 768px 以上
-  @media (min-width: 768px) {
+  // tablet 
+  @media (min-width: 1150px) {
+    padding: 70px 20px 20px;
+  }
+
+  // desktop 
+  @media (min-width: 1200px) {
     justify-content: flex-end;
-    padding: 40px;
+    padding: 150px  100px;
   }
 `;
 
@@ -65,8 +70,8 @@ const LoginCard = styled.div`
   max-width: 100%;
   padding: 32px 24px;
 
-// 768px 以上
-  @media (min-width: 768px) {
+// 1023px 以上
+  @media (min-width: 1023px) {
     max-width: 480px;
     padding: 48px;
   }
@@ -286,7 +291,7 @@ const Login: React.FC = () => {
                 size="large"
                 htmlType="submit"
                 loading={editMutation.isPending}
-                // disabled={isActive === false}
+              // disabled={isActive === false}
               >
                 {editMutation.isPending ? "AUTHENTICATING..." : "LOGIN"}
               </LoginButton>
